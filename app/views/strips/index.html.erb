@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Strips</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Titre</th>
+      <th>Strip number</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @strips.each do |strip| %>
+      <tr>
+        <td><%= strip.image %></td>
+        <td><%= strip.titre %></td>
+        <td><%= strip.strip_number %></td>
+        <td><%= strip.description %></td>
+        <td><%= link_to 'Show', strip %></td>
+        <td><%= link_to 'Edit', edit_strip_path(strip) %></td>
+        <td><%= link_to 'Destroy', strip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Strip', new_strip_path %>
